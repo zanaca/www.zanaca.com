@@ -134,6 +134,16 @@ footer {
     opacity:.9;
 }
 
+.hack-summary {
+    padding: 20px;
+    padding-top:0;
+    background-color:#fafbfc;
+    margin: 20px 0 20px 0;
+    border: 0 solid #666;
+    border-width: 1px 0 15px 0;
+    opacity:.9;
+}
+
 .post-summary .footnote {
     font-size: 14px;
     float: right;
