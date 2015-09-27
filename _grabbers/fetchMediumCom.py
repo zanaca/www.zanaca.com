@@ -13,6 +13,11 @@ import os
 
 here = os.path.dirname(os.path.realpath(__file__))
 
+def baseN(num,b = None,numerals="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+    if b is None:
+        b = len(numerals)
+    return ((num == 0) and numerals[0]) or (baseN(num // b, b, numerals).lstrip(numerals[0]) + numerals[num % b])
+
 def string_to_datetime(string_delta):
     if string_delta.find('ago') > 1:
         value, unit, _ = string_delta.split()
