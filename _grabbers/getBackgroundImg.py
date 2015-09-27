@@ -2,6 +2,9 @@
 
 import urllib2
 import sys
+import os
+
+here  = os.path.dirname(os.path.realpath(__file__))
 
 def processHashtag(hash):
     url = 'http://iconosquare.com/tag/%s' % hash
@@ -33,10 +36,10 @@ def processHashtag(hash):
 
     BODY{background-color: transparent;}
     """ % img
-    open('../css/background.css', 'w').write(css)
+    open('%s/../css/background.css' % here, 'w').write(css)
 
     instagram='<a href="https://instagram.com/%s" target=_blank><img src="%s" width="150px" height="150px"><br>@%s</a>' % (user, img, user)
-    open('../__instagramPhoto.html','w').write(instagram)
+    open('%s/../__instagramPhoto.html' % here,'w').write(instagram)
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:

@@ -9,6 +9,9 @@ import datetime
 import time
 import json
 import codecs
+import os
+
+here = os.path.dirname(os.path.realpath(__file__))
 
 def string_to_datetime(string_delta):
     if string_delta.find('ago') > 1:
@@ -50,17 +53,17 @@ for mediumPost in mediumPosts:
 %(body)s
 
 <span class="footnote">[ <time>%(time)s</time> - <a href="%(link)s" rel="no-follow">Medium</a> ]</span>""" % {'title' : title, 'body' : postBody, 'time': mediumPost['virtuals']['latestPublishedAtAbbreviated'], 'link' : link}
-    codecs.open("../posts/%s-%s.html" % (mediumPost['createdAt'], mediumPost['uniqueSlug']) , 'w', 'utf-8').write(body)
+    codecs.open("%s/../posts/%s-%s.html" % (here, mediumPost['createdAt'], mediumPost['uniqueSlug']) , 'w', 'utf-8').write(body)
 
 
-posts = [ f for f in listdir('../posts') if isfile(join('../posts',f)) ]
+posts = [ f for f in listdir('%s/../posts' % here) if isfile(join('%s/../posts' % here,f)) ]
 posts.reverse()
 container = ''
 for postFile in posts:
     if postFile == 'index.html':
         continue
 
-    post = open('../posts/%s' % postFile,'r').read()
+    post = open('%s/../posts/%s' % (here, postFile),'r').read()
     title = post.split('</h3>')[0][4:]
     time = post.split('time>')[1][:-2]
 
@@ -73,6 +76,6 @@ for postFile in posts:
     </div>
 """ % (postFile,title,time)
 
-html = open("../index.html",'r').read()
+html = open("%s/../index.html" % here,'r').read()
 html = html.replace('<!-- containerBody -->', '<div class="posts">%s</div>' % container.encode('utf-8'))
-codecs.open('../posts/index.html','w').write(html)
+codecs.open('%s/../posts/index.html' % here,'w').write(html)
