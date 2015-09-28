@@ -2,13 +2,21 @@
 import SimpleHTTPServer
 import SocketServer
 import _grabbers.fetchBackgroundImg as bg
+import os
 from urlparse import urlparse, parse_qs
 
 ADDR = '0.0.0.0'
-PORT = 8080
+PORT = 8081
 
 class MyRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
+    #error_message_format = codecs.open('404.html','r','utf-8').read()
+
     def do_GET(self):
+        path = self.translate_path(self.path)
+        m = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;
+        m[''] = 'text/html';
+        m.update(dict([(k, v + ';charset=UTF-8') for k, v in m.items()]));
+
         req = urlparse(self.path)
         if req.path == '/bg':
             params = parse_qs(req.query)
@@ -21,9 +29,9 @@ class MyRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
             self.wfile.write('')
             return
 
-        m = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;
-        m[''] = 'text/html';
-        m.update(dict([(k, v + ';charset=UTF-8') for k, v in m.items()]));
+        if not os.path.exists(path):
+            self.path = '404.html'
+
         return SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
 
 Handler = MyRequestHandler
