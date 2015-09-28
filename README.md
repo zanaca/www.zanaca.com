@@ -15,7 +15,7 @@ Para começar a servir:
 `./app.py`
 
 Para pegar os posts:
-`./_grabber/fetchMediumPosts.py`
+`./_grabbers/fetchMediumPosts.py`
 
 Para alterar a imagem de fundo:
-`./_grabber/fetchBackgroundImg.py`
+`./_grabbers/fetchBackgroundImg.py`

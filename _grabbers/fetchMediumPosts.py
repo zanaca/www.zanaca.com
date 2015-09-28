@@ -84,6 +84,6 @@ for postFile in posts:
     </div>
 """ % (postFile,title,time)
 
-html = open("%s/../index.html" % here,'r').read().replace('<title>Zanaca</title>','<title>Notas | Zanaca</title>)
+html = open("%s/../index.html" % here,'r').read().replace('<title>Zanaca</title>','<title>Notas | Zanaca</title>')
 html = html.replace('<!-- containerBody -->', '<div class="posts">%s</div>' % container.encode('utf-8'))
 codecs.open('%s/../posts/index.html' % here,'w').write(html)
