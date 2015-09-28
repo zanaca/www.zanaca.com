@@ -6,7 +6,7 @@ import os
 from urlparse import urlparse, parse_qs
 
 ADDR = '0.0.0.0'
-PORT = 8081
+PORT = 8080
 
 class MyRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
     #error_message_format = codecs.open('404.html','r','utf-8').read()
