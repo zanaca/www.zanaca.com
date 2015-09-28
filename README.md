@@ -9,8 +9,6 @@ Para escrever um post, basta criar um post no Medium.com, o cron <code>fetchMedi
 * Praparar um crontab para rodar o fetchMediumPosts.py e fetchBackgroundImg.py
 * Servir a raiz com o servidor web que preferir
 
-Setup with just the `gh-pages` branch so anything you do in this branch will be displayed on the site on push. (It can take up to 10 minutes to be reflected)
-
 ### Desenvolvimento
 
 Para começar a servir:
