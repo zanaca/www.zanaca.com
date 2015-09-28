@@ -42,6 +42,9 @@ response = urllib2.urlopen(req).read().split('</x>')[1]
 mediumPosts =  json.loads(response)['payload']['posts']
 
 
+if not os.path.exists("%s/../posts" % here):
+    os.makedirs("%s/../posts" % here)
+
 for mediumPost in mediumPosts:
     title = mediumPost['title']
     link = 'https://medium.com/@zanaca/%s' % mediumPost['uniqueSlug']
