@@ -7,12 +7,12 @@ Para escrever um post, basta criar um post no Medium.com, o cron <code>fetchMedi
 ### Deployment
 
 * Praparar um crontab para rodar o fetchMediumPosts.py e fetchBackgroundImg.py
-* Servir a raiz com o servidor web que preferir
+* Rodar `./app.py &`
 
 ### Desenvolvimento
 
 Para começar a servir:
-`python -m SimpleHTTPServer 8080 &`
+`./app.py`
 
 Para pegar os posts:
 `./_grabber/fetchMediumPosts.py`
