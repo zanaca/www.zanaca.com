@@ -60,6 +60,7 @@ var checkHash = function()
         <div class="row-fluid">'+data+'</div>\
     </div>\
     </div>');
+            _scrollTo('.posts')
         });
     } else {
         changeImg();
@@ -75,4 +76,9 @@ var changeImg = function()
             href: "/css/background.css"
         }).appendTo("head");
     });
+}
+
+var _scrollTo = function(id){
+    var tag = $(id);
+    $('html,body').animate({scrollTop: tag.offset().top},'slow');
 }
