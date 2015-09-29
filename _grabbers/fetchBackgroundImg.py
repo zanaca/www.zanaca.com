@@ -21,7 +21,7 @@ def processHashtag(hash):
     css = """HTML:before {
         background: url('%s')  no-repeat;
         width: 100%%;
-        height: 100%%;
+        height: 100vh;
         background-size: 100%%;
         -webkit-filter: blur(26px);
         -moz-filter: blur(26px);
@@ -35,6 +35,14 @@ def processHashtag(hash):
     }
 
     BODY{background-color: transparent;}
+
+    @media (min-width: 710px) {
+        HTML:before {
+            width: 100%%;
+            height: 100vh;
+            background-size: 100%%;
+        }
+    }
     """ % img
     open('%s/../css/background.css' % here, 'w').write(css)
 

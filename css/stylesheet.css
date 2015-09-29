@@ -45,13 +45,17 @@ h1 {
 }
 
 #avatar img {
-  width: 80px;
-  border-radius: 100px;
+  width: 50%;
+  border-radius: 140px;
 
   display: block;
   margin: 0 auto;
-  padding-top: 15px;
-  -webkit-filter: saturate(.3);
+  padding-bottom: 35px;
+  -webkit-filter: saturate(.5);
+}
+
+#avatar .blur {
+    -webkit-filter: blur(8px);
 }
 
 .icon img {
@@ -63,17 +67,17 @@ h1 {
   font-size: 40px;
 }
 
-#bio {
+#mementoMori {
   font-size: 20px;
 }
 
 a {
-  color: #998;
+  color: #855;
   text-decoration: none;
 }
 
 a:hover {
-  color: #489Ce9;
+  color: #e99C48;
 }
 
 /* Larger screens */
