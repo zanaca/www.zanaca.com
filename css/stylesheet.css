@@ -28,6 +28,9 @@ p {
   line-height: 1.5em;
 }
 
+h1,h2,h3,h4,h5,h6 {
+    font-family: "trebuchet ms"
+}
 h1 {
   margin: 1em 0;
   font-size: 1.5em;
@@ -74,10 +77,12 @@ h1 {
 a {
   color: #855;
   text-decoration: none;
+  /*text-shadow: 0 0  5px rgba(250,251,252,.5);*/
 }
 
 a:hover {
   color: #e99C48;
+  /*text-shadow: 0 0  5px rgba(250,251,252,.5);*/
 }
 
 /* Larger screens */
