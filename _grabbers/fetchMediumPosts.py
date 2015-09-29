@@ -79,10 +79,10 @@ for postFile in posts:
     container+= """
     <div class="post-summary">
         <div class="row-fluid">
-                <a href='#%s'><h3>%s</h3></a><time  class="footnote">%s</time>
+                <time  class="footnote">%s</time><a href='#%s'><h3>%s</h3></a>
         </div>
     </div>
-""" % (postFile,title,time)
+""" % (time,postFile,title)
 
 html = open("%s/../index.html" % here,'r').read().replace('<title>Zanaca</title>','<title>Notas | Zanaca</title>')
 html = html.replace('<!-- containerBody -->', '<div class="posts">%s</div>' % container.encode('utf-8'))
