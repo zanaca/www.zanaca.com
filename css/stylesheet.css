@@ -72,17 +72,18 @@ h1 {
 
 #mementoMori {
   font-size: 20px;
+  text-shadow: 0 0 2px rgba(250,251,252,.5);
 }
 
 a {
   color: #855;
   text-decoration: none;
-  /*text-shadow: 0 0  5px rgba(250,251,252,.5);*/
+  text-shadow:  0 0 2px rgba(92,0,0,.2);
 }
 
 a:hover {
   color: #e99C48;
-  /*text-shadow: 0 0  5px rgba(250,251,252,.5);*/
+  text-shadow:  0 0 2px rgba(128,64,0,.2);
 }
 
 /* Larger screens */
