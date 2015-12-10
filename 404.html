@@ -16,9 +16,11 @@
 <![endif]-->
 <style>
 BODY  {
-    background-color: #154db1;
     height:100vh;
     color: #fff;
+    background: url('/img/johnTravolta.gif') no-repeat;
+    background-size: 100% 100%;
+
 }
 
 #facepalm {
@@ -34,6 +36,19 @@ BODY  {
     position: absolute;
     content:"";
 }
+
+#modal {
+    z-index: -1;
+    background-color:#000;
+    opacity:.6;
+    top:0;
+    left: 0;
+    position: absolute;
+    content:"";
+    height:100%;
+    width:100%;
+}
+
 
 H1, H2 {
     margin:.5em;
@@ -67,7 +82,7 @@ a:hover {
                   <li><a href="https://www.google.com/search?q=site%3Azanaca.com">Google</a></li>
                 </ul>
     </div>
-    <div id='facepalm'></div>
+    <div id='modal'></div>
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
